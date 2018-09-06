@@ -61,5 +61,28 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
+
+    <!-- Stackblitz embedder-->
+    <script src="https://unpkg.com/@stackblitz/sdk/bundles/sdk.umd.js"></script>
+    
+    <script defer>
+        var sbbs = document.getElementsByClassName('stackblitzblock');
+        for(i=0;i<sbbs.length;i++){
+            sdk.embedProject(sbbs[i], sbbs[i].innerHTML); //, embedOpts
+        }
+    </script>
+    <!--
+    EMBED OPTIONS
+    {
+      openFile?: string; // Show a specific file on embed load
+      clickToLoad?: boolean; // Load editor only when clicked ("click to load")
+      view?: 'preview' | 'editor';
+      height?: number | string;
+      width?: number | string;
+      hideExplorer?: boolean;
+      hideNavigation?: boolean;
+      forceEmbedLayout?: boolean; // Disables the full stackblitz UI on larger screen sizes
+    }
+    -->
   </body>
 </html>
