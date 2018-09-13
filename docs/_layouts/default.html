@@ -67,12 +67,15 @@
     
     <script defer>
         var sbbs = document.getElementsByClassName('stackblitzblock');
+      console.trace(sbbs.length);
         var eOpts = {
           view: 'preview',
           hideExplorer: false,
           hideNavigation: true
         }
-        for(i=0;i<=sbbs.length;i++){          
+        for(i=0; i <= sbbs.length; i++){   
+          
+      console.trace(' writing ' + sbbs[i] + ' ' + sbbs[i].innerHTML);
             StackBlitzSDK.embedProjectId(sbbs[i],sbbs[i].innerHTML,eOpts);
         }
     </script>
