@@ -67,16 +67,13 @@
     
     <script defer>
         var sbbs = document.getElementsByClassName('stackblitzblock');
-      console.trace(sbbs.length);
-        var eOpts = {
-          view: 'preview',
-          hideExplorer: false,
-          hideNavigation: true
+        var eOpts = { view: 'preview', hideExplorer: false, hideNavigation: true };
+        var sbPlaceholders = new Array();
+        for (var i = 0; i < sbbs.length; i++) {
+          sbPlaceholders.push( { "label": sbbs[i].innerHTML, "element": sbbs[i] });
         }
-        for(i=0; i <= sbbs.length; i++){   
-          
-      console.trace(' writing ' + i + ' ' + sbbs[i] + ' ' + sbbs[i].innerHTML);
-            StackBlitzSDK.embedProjectId(sbbs[i],sbbs[i].innerHTML,eOpts);
+        for (var i = 0; i < sbPlaceholders.length; i++) {
+          StackBlitzSDK.embedProjectId(sbPlaceholders[i].element, sbPlaceholders[i].label, eOpts);
         }
     </script>
  
