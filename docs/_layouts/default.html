@@ -67,8 +67,14 @@
     
     <script defer>
         var sbbs = document.getElementsByClassName('stackblitzblock');
+        var eOpts = {
+          view: 'preview',
+          hideExplorer: false,
+          hideNavigation: true
+        }
         for(i=0;i<sbbs.length;i++){
-            sdk.embedProject(sbbs[i], sbbs[i].innerHTML); //, embedOpts
+          
+            StackBlitzSDK.embedProjectId(sbbs[i],sbbs[i].innerHTML,eOpts);
         }
     </script>
     <!--
