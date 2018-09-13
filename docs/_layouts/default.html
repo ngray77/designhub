@@ -72,23 +72,10 @@
           hideExplorer: false,
           hideNavigation: true
         }
-        for(i=0;i<sbbs.length;i++){
-          
+        for(i=0;i<=sbbs.length;i++){          
             StackBlitzSDK.embedProjectId(sbbs[i],sbbs[i].innerHTML,eOpts);
         }
     </script>
-    <!--
-    EMBED OPTIONS
-    {
-      openFile?: string; // Show a specific file on embed load
-      clickToLoad?: boolean; // Load editor only when clicked ("click to load")
-      view?: 'preview' | 'editor';
-      height?: number | string;
-      width?: number | string;
-      hideExplorer?: boolean;
-      hideNavigation?: boolean;
-      forceEmbedLayout?: boolean; // Disables the full stackblitz UI on larger screen sizes
-    }
-    -->
+ 
   </body>
 </html>
